@@ -38,7 +38,7 @@ switch ($modx->event->name) {
             $products .= "\n";
         }
         
-        //make description for task with markup language
+        //make description for task with markdown language
 		$description .= "Новый заказ #{$msOrder->num} на сумму {$msOrder->cost} р.\n\n";
         $description .= "Товары:\n";
         $description .= "{$products}\n";
