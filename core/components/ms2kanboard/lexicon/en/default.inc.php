@@ -2,14 +2,11 @@
 include_once 'setting.inc.php';
 
 $_lang['ms2kanboard'] = 'ms2Kanboard';
-$_lang['ms2kanboard_menu_desc'] = 'A sample Extra to develop from.';
+$_lang['ms2kanboard_menu_desc'] = 'Orders to Kanboard';
 $_lang['ms2kanboard_intro_msg'] = 'You can select multiple items by holding Shift or Ctrl button.';
 
-$_lang['ms2kanboard_items'] = 'Items';
-$_lang['ms2kanboard_item_id'] = 'Id';
-$_lang['ms2kanboard_item_name'] = 'Name';
-$_lang['ms2kanboard_item_description'] = 'Description';
-$_lang['ms2kanboard_item_active'] = 'Active';
+$_lang['ms2kanboard__newsletters'] = 'NewsLetters';
+$_lang['ms2kanboard__newsletters_intro'] = 'On this page you create and edit your subscription.';
 
 $_lang['ms2kanboard_item_create'] = 'Create Item';
 $_lang['ms2kanboard_item_update'] = 'Update Item';

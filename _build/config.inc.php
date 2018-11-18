@@ -6,6 +6,7 @@ if (!defined('MODX_CORE_PATH')) {
         $path = dirname($path);
     }
     define('MODX_CORE_PATH', $path . '/core/');
+
 }
 
 return [
@@ -13,6 +14,7 @@ return [
     'name_lower' => 'ms2kanboard',
     'version' => '2.0.0',
     'release' => 'pl',
+    'namespace_path' => '{base_path}'.'ms2Kanboard'.'/core/components/'.'ms2kanboard'.'/',
     // Install package to site right after build
     'install' => true,
     // Which elements should be updated on package upgrade

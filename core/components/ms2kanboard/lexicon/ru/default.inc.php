@@ -2,14 +2,11 @@
 include_once 'setting.inc.php';
 
 $_lang['ms2kanboard'] = 'ms2Kanboard';
-$_lang['ms2kanboard_menu_desc'] = 'Пример расширения для разработки.';
+$_lang['ms2kanboard_menu_desc'] = 'Выгрузка заказов в канбоард.';
 $_lang['ms2kanboard_intro_msg'] = 'Вы можете выделять сразу несколько предметов при помощи Shift или Ctrl.';
 
-$_lang['ms2kanboard_items'] = 'Предметы';
-$_lang['ms2kanboard_item_id'] = 'Id';
-$_lang['ms2kanboard_item_name'] = 'Название';
-$_lang['ms2kanboard_item_description'] = 'Описание';
-$_lang['ms2kanboard_item_active'] = 'Активно';
+$_lang['ms2kanboard_newsletters'] = 'Подписки';
+$_lang['ms2kanboard_newsletters_intro'] = 'На этой странице вы создаёте и редактируете ваши подписки.';
 
 $_lang['ms2kanboard_item_create'] = 'Создать предмет';
 $_lang['ms2kanboard_item_update'] = 'Изменить Предмет';

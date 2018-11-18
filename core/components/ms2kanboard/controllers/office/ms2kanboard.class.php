@@ -79,7 +79,7 @@ class officeModExtraController extends officeDefaultController
                 MODX_ASSETS_URL . 'components/ms2kanboard/js/mgr/ms2kanboard.js',
                 MODX_ASSETS_URL . 'components/ms2kanboard/js/mgr/misc/utils.js',
                 MODX_ASSETS_URL . 'components/ms2kanboard/js/office/home.panel.js',
-                MODX_ASSETS_URL . 'components/ms2kanboard/js/office/items.grid.js',
+                MODX_ASSETS_URL . 'components/ms2kanboard/js/office/newsletters.grid.js',
                 MODX_ASSETS_URL . 'components/ms2kanboard/js/office/items.windows.js',
                 str_replace($config['pl'], $config['vl'], $js),
             ], 'ms2kanboard/all');

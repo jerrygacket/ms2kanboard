@@ -20,13 +20,13 @@ ms2Kanboard.panel.Home = function (config) {
             border: true,
             hideMode: 'offsets',
             items: [{
-                title: _('ms2kanboard_items'),
+                title: _('ms2kanboard_newsletters'),
                 layout: 'anchor',
                 items: [{
-                    html: _('ms2kanboard_intro_msg'),
+                    html: _('ms2kanboard_newsletters_intro'),
                     cls: 'panel-desc',
                 }, {
-                    xtype: 'ms2kanboard-grid-items',
+                    xtype: 'ms2kanboard-grid-newsletters',
                     cls: 'main-wrapper',
                 }]
             }]

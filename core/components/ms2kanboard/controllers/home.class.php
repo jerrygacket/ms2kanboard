@@ -1,5 +1,5 @@
 <?php
-
+//echo 'Hello world';die;
 /**
  * The home manager controller for ms2Kanboard.
  *
@@ -56,7 +56,7 @@ class ms2KanboardHomeManagerController extends modExtraManagerController
         $this->addJavascript($this->ms2Kanboard->config['jsUrl'] . 'mgr/ms2kanboard.js');
         $this->addJavascript($this->ms2Kanboard->config['jsUrl'] . 'mgr/misc/utils.js');
         $this->addJavascript($this->ms2Kanboard->config['jsUrl'] . 'mgr/misc/combo.js');
-        $this->addJavascript($this->ms2Kanboard->config['jsUrl'] . 'mgr/widgets/items.grid.js');
+        $this->addJavascript($this->ms2Kanboard->config['jsUrl'] . 'mgr/widgets/newsletters.grid.js');
         $this->addJavascript($this->ms2Kanboard->config['jsUrl'] . 'mgr/widgets/items.windows.js');
         $this->addJavascript($this->ms2Kanboard->config['jsUrl'] . 'mgr/widgets/home.panel.js');
         $this->addJavascript($this->ms2Kanboard->config['jsUrl'] . 'mgr/sections/home.js');

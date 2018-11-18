@@ -1,7 +1,7 @@
-ms2Kanboard.grid.Items = function (config) {
+ms2Kanboard.grid.newsletters = function (config) {
     config = config || {};
     if (!config.id) {
-        config.id = 'ms2kanboard-grid-items';
+        config.id = 'ms2kanboard-grid-newsletters';
     }
     Ext.applyIf(config, {
         url: ms2Kanboard.config.connector_url,
@@ -10,12 +10,12 @@ ms2Kanboard.grid.Items = function (config) {
         tbar: this.getTopBar(config),
         sm: new Ext.grid.CheckboxSelectionModel(),
         baseParams: {
-            action: 'mgr/item/getlist'
+            action: 'mgr/newsletter/getlist'
         },
         listeners: {
             rowDblClick: function (grid, rowIndex, e) {
                 var row = grid.store.getAt(rowIndex);
-                this.updateItem(grid, e, row);
+                this.updatenewsletter(grid, e, row);
             }
         },
         viewConfig: {
@@ -34,7 +34,7 @@ ms2Kanboard.grid.Items = function (config) {
         remoteSort: true,
         autoHeight: true,
     });
-    ms2Kanboard.grid.Items.superclass.constructor.call(this, config);
+    ms2Kanboard.grid.newsletters.superclass.constructor.call(this, config);
 
     // Clear selection on grid refresh
     this.store.on('load', function () {
@@ -43,7 +43,7 @@ ms2Kanboard.grid.Items = function (config) {
         }
     }, this);
 };
-Ext.extend(ms2Kanboard.grid.Items, MODx.grid.Grid, {
+Ext.extend(ms2Kanboard.grid.newsletters, MODx.grid.Grid, {
     windows: {},
 
     getMenu: function (grid, rowIndex) {
@@ -52,12 +52,12 @@ Ext.extend(ms2Kanboard.grid.Items, MODx.grid.Grid, {
         var row = grid.getStore().getAt(rowIndex);
         var menu = ms2Kanboard.utils.getMenu(row.data['actions'], this, ids);
 
-        this.addContextMenuItem(menu);
+        this.addContextMenunewsletter(menu);
     },
 
-    createItem: function (btn, e) {
+    createnewsletter: function (btn, e) {
         var w = MODx.load({
-            xtype: 'ms2kanboard-item-window-create',
+            xtype: 'ms2kanboard-newsletter-window-create',
             id: Ext.id(),
             listeners: {
                 success: {
@@ -72,7 +72,7 @@ Ext.extend(ms2Kanboard.grid.Items, MODx.grid.Grid, {
         w.show(e.target);
     },
 
-    updateItem: function (btn, e, row) {
+    updatenewsletter: function (btn, e, row) {
         if (typeof(row) != 'undefined') {
             this.menu.record = row.data;
         }
@@ -84,14 +84,14 @@ Ext.extend(ms2Kanboard.grid.Items, MODx.grid.Grid, {
         MODx.Ajax.request({
             url: this.config.url,
             params: {
-                action: 'mgr/item/get',
+                action: 'mgr/newsletter/get',
                 id: id
             },
             listeners: {
                 success: {
                     fn: function (r) {
                         var w = MODx.load({
-                            xtype: 'ms2kanboard-item-window-update',
+                            xtype: 'ms2kanboard-newsletter-window-update',
                             id: Ext.id(),
                             record: r,
                             listeners: {
@@ -111,21 +111,21 @@ Ext.extend(ms2Kanboard.grid.Items, MODx.grid.Grid, {
         });
     },
 
-    removeItem: function () {
+    removenewsletter: function () {
         var ids = this._getSelectedIds();
         if (!ids.length) {
             return false;
         }
         MODx.msg.confirm({
             title: ids.length > 1
-                ? _('ms2kanboard_items_remove')
-                : _('ms2kanboard_item_remove'),
+                ? _('ms2kanboard_newsletters_remove')
+                : _('ms2kanboard_newsletter_remove'),
             text: ids.length > 1
-                ? _('ms2kanboard_items_remove_confirm')
-                : _('ms2kanboard_item_remove_confirm'),
+                ? _('ms2kanboard_newsletters_remove_confirm')
+                : _('ms2kanboard_newsletter_remove_confirm'),
             url: this.config.url,
             params: {
-                action: 'mgr/item/remove',
+                action: 'mgr/newsletter/remove',
                 ids: Ext.util.JSON.encode(ids),
             },
             listeners: {
@@ -139,7 +139,7 @@ Ext.extend(ms2Kanboard.grid.Items, MODx.grid.Grid, {
         return true;
     },
 
-    disableItem: function () {
+    disablenewsletter: function () {
         var ids = this._getSelectedIds();
         if (!ids.length) {
             return false;
@@ -147,7 +147,7 @@ Ext.extend(ms2Kanboard.grid.Items, MODx.grid.Grid, {
         MODx.Ajax.request({
             url: this.config.url,
             params: {
-                action: 'mgr/item/disable',
+                action: 'mgr/newsletter/disable',
                 ids: Ext.util.JSON.encode(ids),
             },
             listeners: {
@@ -160,7 +160,7 @@ Ext.extend(ms2Kanboard.grid.Items, MODx.grid.Grid, {
         })
     },
 
-    enableItem: function () {
+    enablenewsletter: function () {
         var ids = this._getSelectedIds();
         if (!ids.length) {
             return false;
@@ -168,7 +168,7 @@ Ext.extend(ms2Kanboard.grid.Items, MODx.grid.Grid, {
         MODx.Ajax.request({
             url: this.config.url,
             params: {
-                action: 'mgr/item/enable',
+                action: 'mgr/newsletter/enable',
                 ids: Ext.util.JSON.encode(ids),
             },
             listeners: {
@@ -187,22 +187,22 @@ Ext.extend(ms2Kanboard.grid.Items, MODx.grid.Grid, {
 
     getColumns: function () {
         return [{
-            header: _('ms2kanboard_item_id'),
+            header: _('ms2kanboard_newsletter_id'),
             dataIndex: 'id',
             sortable: true,
             width: 70
         }, {
-            header: _('ms2kanboard_item_name'),
+            header: _('ms2kanboard_newsletter_name'),
             dataIndex: 'name',
             sortable: true,
             width: 200,
         }, {
-            header: _('ms2kanboard_item_description'),
+            header: _('ms2kanboard_newsletter_description'),
             dataIndex: 'description',
             sortable: false,
             width: 250,
         }, {
-            header: _('ms2kanboard_item_active'),
+            header: _('ms2kanboard_newsletter_active'),
             dataIndex: 'active',
             renderer: ms2Kanboard.utils.renderBoolean,
             sortable: true,
@@ -219,8 +219,8 @@ Ext.extend(ms2Kanboard.grid.Items, MODx.grid.Grid, {
 
     getTopBar: function () {
         return [{
-            text: '<i class="icon icon-plus"></i>&nbsp;' + _('ms2kanboard_item_create'),
-            handler: this.createItem,
+            text: '<i class="icon icon-plus"></i>&nbsp;' + _('ms2kanboard_newsletter_create'),
+            handler: this.createnewsletter,
             scope: this
         }, '->', {
             xtype: 'ms2kanboard-field-search',
@@ -284,4 +284,4 @@ Ext.extend(ms2Kanboard.grid.Items, MODx.grid.Grid, {
         this.getBottomToolbar().changePage(1);
     },
 });
-Ext.reg('ms2kanboard-grid-items', ms2Kanboard.grid.Items);
+Ext.reg('ms2kanboard-grid-newsletters', ms2Kanboard.grid.newsletters);

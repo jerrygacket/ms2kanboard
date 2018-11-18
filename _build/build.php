@@ -61,7 +61,7 @@ class ms2KanboardPackage
     {
         $this->builder = $this->modx->getService('transport.modPackageBuilder');
         $this->builder->createPackage($this->config['name_lower'], $this->config['version'], $this->config['release']);
-        $this->builder->registerNamespace($this->config['name_lower'], false, true, '{core_path}components/' . $this->config['name_lower'] . '/');
+        $this->builder->registerNamespace($this->config['name_lower'], false, true, $this->config['namespace_path']);
         $this->modx->log(modX::LOG_LEVEL_INFO, 'Created Transport Package and Namespace.');
 
         $this->category = $this->modx->newObject('modCategory');
