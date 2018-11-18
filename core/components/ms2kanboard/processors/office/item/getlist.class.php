@@ -2,8 +2,8 @@
 
 class ms2KanboardOfficeItemGetListProcessor extends modObjectGetListProcessor
 {
-    public $objectType = 'ms2KanboardItem';
-    public $classKey = 'ms2KanboardItem';
+    public $objectType = 'ms2kNewsletter';
+    public $classKey = 'ms2kNewsletter';
     public $defaultSortField = 'id';
     public $defaultSortDirection = 'DESC';
     //public $permission = 'list';

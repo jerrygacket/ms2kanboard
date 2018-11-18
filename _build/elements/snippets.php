@@ -7,7 +7,7 @@ return [
         'properties' => [
             'tpl' => [
                 'type' => 'textfield',
-                'value' => 'tpl.ms2Kanboard.item',
+                'value' => 'tpl.ms2Kanboard.newsletter',
             ],
             'sortby' => [
                 'type' => 'textfield',

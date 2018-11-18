@@ -1,9 +1,9 @@
 <?php
 
-class ms2KanboardItemDisableProcessor extends modObjectProcessor
+class ms2kNewsletterDisableProcessor extends modObjectProcessor
 {
-    public $objectType = 'ms2KanboardItem';
-    public $classKey = 'ms2KanboardItem';
+    public $objectType = 'ms2kNewsletter';
+    public $classKey = 'ms2kNewsletter';
     public $languageTopics = ['ms2kanboard'];
     //public $permission = 'save';
 
@@ -19,13 +19,13 @@ class ms2KanboardItemDisableProcessor extends modObjectProcessor
 
         $ids = $this->modx->fromJSON($this->getProperty('ids'));
         if (empty($ids)) {
-            return $this->failure($this->modx->lexicon('ms2kanboard_item_err_ns'));
+            return $this->failure($this->modx->lexicon('ms2kanboard_newsletter_err_ns'));
         }
 
         foreach ($ids as $id) {
-            /** @var ms2KanboardItem $object */
+            /** @var ms2kNewsletter $object */
             if (!$object = $this->modx->getObject($this->classKey, $id)) {
-                return $this->failure($this->modx->lexicon('ms2kanboard_item_err_nf'));
+                return $this->failure($this->modx->lexicon('ms2kanboard_newsletter_err_nf'));
             }
 
             $object->set('active', false);
@@ -37,4 +37,4 @@ class ms2KanboardItemDisableProcessor extends modObjectProcessor
 
 }
 
-return 'ms2KanboardItemDisableProcessor';
+return 'ms2kNewsletterDisableProcessor';

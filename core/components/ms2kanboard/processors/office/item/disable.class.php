@@ -2,8 +2,8 @@
 
 class ms2KanboardOfficeItemDisableProcessor extends modObjectProcessor
 {
-    public $objectType = 'ms2KanboardItem';
-    public $classKey = 'ms2KanboardItem';
+    public $objectType = 'ms2kNewsletter';
+    public $classKey = 'ms2kNewsletter';
     public $languageTopics = ['ms2kanboard'];
     //public $permission = 'save';
 
@@ -23,7 +23,7 @@ class ms2KanboardOfficeItemDisableProcessor extends modObjectProcessor
         }
 
         foreach ($ids as $id) {
-            /** @var ms2KanboardItem $object */
+            /** @var ms2kNewsletter $object */
             if (!$object = $this->modx->getObject($this->classKey, $id)) {
                 return $this->failure($this->modx->lexicon('ms2kanboard_item_err_nf'));
             }

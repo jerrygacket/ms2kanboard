@@ -2,8 +2,8 @@
 
 class ms2KanboardOfficeItemGetProcessor extends modObjectGetProcessor
 {
-    public $objectType = 'ms2KanboardItem';
-    public $classKey = 'ms2KanboardItem';
+    public $objectType = 'ms2kNewsletter';
+    public $classKey = 'ms2kNewsletter';
     public $languageTopics = ['ms2kanboard:default'];
     //public $permission = 'view';
 

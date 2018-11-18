@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'tpl.ms2Kanboard.item' => [
-        'file' => 'item',
+    'tpl.ms2Kanboard.newsletter' => [
+        'file' => 'newsletter',
         'description' => '',
     ],
     'tpl.ms2Kanboard.office' => [

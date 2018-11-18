@@ -1,9 +1,9 @@
 <?php
 
-class ms2KanboardItemGetListProcessor extends modObjectGetListProcessor
+class ms2kNewsletterGetListProcessor extends modObjectGetListProcessor
 {
-    public $objectType = 'ms2KanboardItem';
-    public $classKey = 'ms2KanboardItem';
+    public $objectType = 'ms2kNewsletter';
+    public $classKey = 'ms2kNewsletter';
     public $defaultSortField = 'id';
     public $defaultSortDirection = 'DESC';
     //public $permission = 'list';
@@ -58,9 +58,9 @@ class ms2KanboardItemGetListProcessor extends modObjectGetListProcessor
         $array['actions'][] = [
             'cls' => '',
             'icon' => 'icon icon-edit',
-            'title' => $this->modx->lexicon('ms2kanboard_item_update'),
-            //'multiple' => $this->modx->lexicon('ms2kanboard_items_update'),
-            'action' => 'updateItem',
+            'title' => $this->modx->lexicon('ms2kanboard_newsletter_update'),
+            //'multiple' => $this->modx->lexicon('ms2kanboard_newsletters_update'),
+            'action' => 'updatenewsletter',
             'button' => true,
             'menu' => true,
         ];
@@ -69,9 +69,9 @@ class ms2KanboardItemGetListProcessor extends modObjectGetListProcessor
             $array['actions'][] = [
                 'cls' => '',
                 'icon' => 'icon icon-power-off action-green',
-                'title' => $this->modx->lexicon('ms2kanboard_item_enable'),
-                'multiple' => $this->modx->lexicon('ms2kanboard_items_enable'),
-                'action' => 'enableItem',
+                'title' => $this->modx->lexicon('ms2kanboard_newsletter_enable'),
+                'multiple' => $this->modx->lexicon('ms2kanboard_newsletters_enable'),
+                'action' => 'enablenewsletter',
                 'button' => true,
                 'menu' => true,
             ];
@@ -79,9 +79,9 @@ class ms2KanboardItemGetListProcessor extends modObjectGetListProcessor
             $array['actions'][] = [
                 'cls' => '',
                 'icon' => 'icon icon-power-off action-gray',
-                'title' => $this->modx->lexicon('ms2kanboard_item_disable'),
-                'multiple' => $this->modx->lexicon('ms2kanboard_items_disable'),
-                'action' => 'disableItem',
+                'title' => $this->modx->lexicon('ms2kanboard_newsletter_disable'),
+                'multiple' => $this->modx->lexicon('ms2kanboard_newsletters_disable'),
+                'action' => 'disablenewsletter',
                 'button' => true,
                 'menu' => true,
             ];
@@ -91,9 +91,9 @@ class ms2KanboardItemGetListProcessor extends modObjectGetListProcessor
         $array['actions'][] = [
             'cls' => '',
             'icon' => 'icon icon-trash-o action-red',
-            'title' => $this->modx->lexicon('ms2kanboard_item_remove'),
-            'multiple' => $this->modx->lexicon('ms2kanboard_items_remove'),
-            'action' => 'removeItem',
+            'title' => $this->modx->lexicon('ms2kanboard_newsletter_remove'),
+            'multiple' => $this->modx->lexicon('ms2kanboard_newsletters_remove'),
+            'action' => 'removenewsletter',
             'button' => true,
             'menu' => true,
         ];
@@ -103,4 +103,4 @@ class ms2KanboardItemGetListProcessor extends modObjectGetListProcessor
 
 }
 
-return 'ms2KanboardItemGetListProcessor';
+return 'ms2kNewsletterGetListProcessor';

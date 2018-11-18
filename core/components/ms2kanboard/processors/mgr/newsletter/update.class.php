@@ -1,9 +1,9 @@
 <?php
 
-class ms2KanboardItemUpdateProcessor extends modObjectUpdateProcessor
+class ms2kNewsletterUpdateProcessor extends modObjectUpdateProcessor
 {
-    public $objectType = 'ms2KanboardItem';
-    public $classKey = 'ms2KanboardItem';
+    public $objectType = 'ms2kNewsletter';
+    public $classKey = 'ms2kNewsletter';
     public $languageTopics = ['ms2kanboard'];
     //public $permission = 'save';
 
@@ -32,17 +32,17 @@ class ms2KanboardItemUpdateProcessor extends modObjectUpdateProcessor
         $id = (int)$this->getProperty('id');
         $name = trim($this->getProperty('name'));
         if (empty($id)) {
-            return $this->modx->lexicon('ms2kanboard_item_err_ns');
+            return $this->modx->lexicon('ms2kanboard_newsletter_err_ns');
         }
 
         if (empty($name)) {
-            $this->modx->error->addField('name', $this->modx->lexicon('ms2kanboard_item_err_name'));
+            $this->modx->error->addField('name', $this->modx->lexicon('ms2kanboard_newsletter_err_name'));
         } elseif ($this->modx->getCount($this->classKey, ['name' => $name, 'id:!=' => $id])) {
-            $this->modx->error->addField('name', $this->modx->lexicon('ms2kanboard_item_err_ae'));
+            $this->modx->error->addField('name', $this->modx->lexicon('ms2kanboard_newsletter_err_ae'));
         }
 
         return parent::beforeSet();
     }
 }
 
-return 'ms2KanboardItemUpdateProcessor';
+return 'ms2kNewsletterUpdateProcessor';

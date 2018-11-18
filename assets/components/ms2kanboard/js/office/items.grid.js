@@ -7,7 +7,7 @@ ms2Kanboard.grid.Items = function (config) {
         url: ms2Kanboard.config.connector_url,
         baseParams: {
             action: 'ms2kanboard/processor',
-            method: 'item/getlist',
+            method: 'newsletter/getlist',
         },
         multi_select: true,
         viewConfig: {
@@ -65,7 +65,7 @@ Ext.extend(ms2Kanboard.grid.Items, OfficeExt.grid.Default, {
             url: this.config.url,
             params: {
                 action: 'ms2kanboard/processor',
-                method: 'item/get',
+                method: 'newsletter/get',
                 id: id,
             },
             listeners: {
@@ -107,7 +107,7 @@ Ext.extend(ms2Kanboard.grid.Items, OfficeExt.grid.Default, {
             url: this.config.url,
             params: {
                 action: 'ms2kanboard/processor',
-                method: 'item/remove',
+                method: 'newsletter/remove',
                 ids: Ext.util.JSON.encode(ids),
             },
             listeners: {
@@ -130,7 +130,7 @@ Ext.extend(ms2Kanboard.grid.Items, OfficeExt.grid.Default, {
             url: this.config.url,
             params: {
                 action: 'ms2kanboard/processor',
-                method: 'item/disable',
+                method: 'newsletter/disable',
                 ids: Ext.util.JSON.encode(ids),
             },
             listeners: {
@@ -152,7 +152,7 @@ Ext.extend(ms2Kanboard.grid.Items, OfficeExt.grid.Default, {
             url: this.config.url,
             params: {
                 action: 'ms2kanboard/processor',
-                method: 'item/enable',
+                method: 'newsletter/enable',
                 ids: Ext.util.JSON.encode(ids),
             },
             listeners: {

@@ -10,7 +10,7 @@ ms2Kanboard.window.CreateItem = function (config) {
         url: ms2Kanboard.config.connector_url,
         baseParams: {
             action: 'ms2kanboard/processor',
-            method: 'item/create',
+            method: 'newsletter/create',
         },
         fields: this.getFields(config),
         keys: this.getKeys(config),
@@ -73,7 +73,7 @@ ms2Kanboard.window.UpdateItem = function (config) {
         url: ms2Kanboard.config.connector_url,
         baseParams: {
             action: 'ms2kanboard/processor',
-            method: 'item/update',
+            method: 'newsletter/update',
         },
         fields: this.getFields(config),
         keys: this.getKeys(config),

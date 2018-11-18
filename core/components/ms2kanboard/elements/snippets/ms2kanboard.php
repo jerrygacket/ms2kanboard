@@ -16,15 +16,15 @@ $outputSeparator = $modx->getOption('outputSeparator', $scriptProperties, "\n");
 $toPlaceholder = $modx->getOption('toPlaceholder', $scriptProperties, false);
 
 // Build query
-$c = $modx->newQuery('ms2KanboardItem');
+$c = $modx->newQuery('ms2kNewsletter');
 $c->sortby($sortby, $sortdir);
 $c->where(['active' => 1]);
 $c->limit($limit);
-$items = $modx->getIterator('ms2KanboardItem', $c);
+$items = $modx->getIterator('ms2kNewsletter', $c);
 
 // Iterate through items
 $list = [];
-/** @var ms2KanboardItem $item */
+/** @var ms2kNewsletter $item */
 foreach ($items as $item) {
     $list[] = $modx->getChunk($tpl, $item->toArray());
 }

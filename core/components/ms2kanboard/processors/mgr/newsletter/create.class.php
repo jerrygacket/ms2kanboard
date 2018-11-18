@@ -1,6 +1,6 @@
 <?php
 
-class ms2KanboardOfficeItemCreateProcessor extends modObjectCreateProcessor
+class ms2kNewsletterCreateProcessor extends modObjectCreateProcessor
 {
     public $objectType = 'ms2kNewsletter';
     public $classKey = 'ms2kNewsletter';
@@ -15,9 +15,9 @@ class ms2KanboardOfficeItemCreateProcessor extends modObjectCreateProcessor
     {
         $name = trim($this->getProperty('name'));
         if (empty($name)) {
-            $this->modx->error->addField('name', $this->modx->lexicon('ms2kanboard_item_err_name'));
+            $this->modx->error->addField('name', $this->modx->lexicon('ms2kanboard_newsletter_err_name'));
         } elseif ($this->modx->getCount($this->classKey, ['name' => $name])) {
-            $this->modx->error->addField('name', $this->modx->lexicon('ms2kanboard_item_err_ae'));
+            $this->modx->error->addField('name', $this->modx->lexicon('ms2kanboard_newsletter_err_ae'));
         }
 
         return parent::beforeSet();
@@ -25,4 +25,4 @@ class ms2KanboardOfficeItemCreateProcessor extends modObjectCreateProcessor
 
 }
 
-return 'ms2KanboardOfficeItemCreateProcessor';
+return 'ms2kNewsletterCreateProcessor';

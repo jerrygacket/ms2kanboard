@@ -1,9 +1,9 @@
 <?php
 
-class ms2KanboardItemGetProcessor extends modObjectGetProcessor
+class ms2kNewsletterGetProcessor extends modObjectGetProcessor
 {
-    public $objectType = 'ms2KanboardItem';
-    public $classKey = 'ms2KanboardItem';
+    public $objectType = 'ms2kNewsletter';
+    public $classKey = 'ms2kNewsletter';
     public $languageTopics = ['ms2kanboard:default'];
     //public $permission = 'view';
 
@@ -25,4 +25,4 @@ class ms2KanboardItemGetProcessor extends modObjectGetProcessor
 
 }
 
-return 'ms2KanboardItemGetProcessor';
+return 'ms2kNewsletterGetProcessor';
